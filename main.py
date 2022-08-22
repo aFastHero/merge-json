@@ -1,6 +1,6 @@
 import sys
 import json
-import os.path
+import os
 
 folder_name = sys.argv[1]
 new_file_name = sys.argv[2]
