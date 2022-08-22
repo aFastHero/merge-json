@@ -1,12 +1,15 @@
+import sys
 import json
 import os.path
 
+folder_name = sys.argv[1]
+new_file_name = sys.argv[2]
 
 def main():
 
     fileList = []
-    path = 'Metadata'
-    for filenames in os.walk(path):
+    # path = 'sample_files'
+    for filenames in os.walk(folder_name):
         
         fileList.append(filenames)
 
@@ -15,7 +18,7 @@ def main():
         
         try:
 
-            data = json.load(open('Metadata/' + filenames[2][i], encoding='utf-8'))
+            data = json.load(open(folder_name + '/' + filenames[2][i], encoding='utf-8'))
             data_final = dict((k, data[k]) for k in ("attributes","image","name","description"))
 
             attributes = []
@@ -43,7 +46,7 @@ def main():
         except Exception:
             pass
 
-    out_file = open("metadata.json", "w")
+    out_file = open(new_file_name + ".json", "w")
     json.dump(data_list, out_file, indent=2)
     out_file.close()
 
