@@ -8,7 +8,6 @@ new_file_name = sys.argv[2]
 def main():
 
     fileList = []
-    # path = 'sample_files'
     for filenames in os.walk(folder_name):
         
         fileList.append(filenames)
