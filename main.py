@@ -30,7 +30,6 @@ def main():
                     
                     trait_list = []
                     for i in range(len(attributes)):
-                        
                         trait_list.append(props_final["trait_type"][i]["value"])
                     props_final["trait_type"] = trait_list
 
